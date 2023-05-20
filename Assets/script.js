@@ -1,16 +1,30 @@
 // Quiz questions and answers
 const questions = [
     {
-      question: "What is the capital city of France?",
-      choices: ["Paris", "London", "Berlin", "Rome"],
-      answer: 0
+      question: "Commonly used data types DO NOT include:",
+      choices: ["strings", "booleans", "alerts", "numbers"],
+      answer: 
     },
     {
-      question: "What is the result of 2 + 2?",
-      choices: ["1", "3", "4", "5"],
-      answer: 2
+      question: "The condition in an if / else statement is enclosed within ________.",
+      choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
+      answer: 
     },
-    // Add more questions here
+    {
+      question: "Arrays in JavaScript can be used to store _______.",
+      choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+      answer: 
+    },
+    {
+      question: "String values must be enclosed withtin ___________ when being assigned to variables.",
+      choices: ["commas", "curly brackets", "quotes", "parentheses"],
+      answer: 
+    },
+    {
+      question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+      choices: ["JavaScript", "terminal/bash", "for loops", "console.log"],
+      answer: 
+    },
   ];
   
   const quizContainer = document.getElementById("quiz");
