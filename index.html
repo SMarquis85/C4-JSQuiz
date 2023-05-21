@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>JavaScript Quiz</title>
-    <link rel="stylesheet" type="text/css" href="Assets/style.css">
-  </head>
-  <body>
-    <h1>Coding Quiz Challenge</h1>
+<head>
+  <title>JavaScript Quiz</title>
+  <link rel="stylesheet" href="Assets/style.css">
+</head>
+<body>
+  <h1>JavaScript Quiz</h1>
+  <p id="instructions">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds.</p>
+  <div id="quiz" class="quiz-container"></div>
+  <button id="start">Start Quiz</button>
+  <div id="timer">Time Remaining: <span id="time">0</span> seconds</div>
+  <div id="question" class="quiz-question"></div>
+  <div id="choices" class="quiz-choices"></div>
+  <div id="feedback" class="feedback"></div>
+  <form id="highscore-form" class="highscore-form" style="display: none;">
+    <label for="initials">Enter your initials:</label>
+    <input type="text" id="initials" required>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="highscore-list" class="highscore-list"></div>
 
-    <div id="quiz"></div>
-    <button id="start">Start Quiz</button>
-    <div id="timer">Time Remaining: <span id="time">0</span> seconds</div>
-    <div id="question"></div>
-    <div id="choices"></div>
-    <div id="feedback"></div>
-
-    <form id="highscore-form" style="display: none;">
-      <label for="initials">Enter your initials:</label>
-      <input type="text" id="initials" required>
-      <button type="submit">Submit</button>
-    </form>
-    <div id="highscore-list"></div>
-
-    <script src="Assets/script.js"></script>
-  </body>
+  <script src="Assets/script.js"></script>
+</body>
 </html>
