@@ -64,8 +64,8 @@ const questions = [
     // Start the timer
     timerInterval = setInterval(updateTimer, 1000);
 
-    // Display the instructions
-  questionElement.textContent = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds.";
+   // Display the instructions
+document.getElementById("question").textContent = "Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds.";
   
     // Display the first question
     displayQuestion();
