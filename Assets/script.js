@@ -131,32 +131,34 @@ const questions = [
   function endQuiz() {
     quizContainer.style.display = "block";
     feedbackElement.textContent = "";
-    questionElement.textContent = "Quiz complete!";
-    choicesContainer.innerHTML = "";
-    highscoreForm.style.display = "block";
-  }
+    questionElement.textContent = "All done!";
+    choicesContainer.innerHTML = "Your final score is: " + timeLeft;
+
+  // Show the form to enter initials
+  highscoreForm.style.display = "block";
+}
   
   // Function to submit the high score
   function submitHighscore(event) {
     event.preventDefault();
     const initials = initialsInput.value.trim();
-  
-    if (initials !== "") {
-      const highscore = {
-        initials: initials,
-        score: timeLeft
-      };
-  
-      highscores.push(highscore);
-      highscores.sort((a, b) => b.score - a.score); // Sort high scores in descending order
-  
-      // Clear the input field
-      initialsInput.value = "";
-  
-      // Display high scores
-      displayHighscores();
-    }
+
+  if (initials !== "") {
+    const highscore = {
+      initials: initials,
+      score: timeLeft
+    };
+
+    highscores.push(highscore);
+    highscores.sort((a, b) => b.score - a.score); // Sort high scores in descending order
+
+    // Clear the input field
+    initialsInput.value = "";
+
+    // Display high scores
+    displayHighscores();
   }
+}
   
   // Function to display high scores
   function displayHighscores() {
