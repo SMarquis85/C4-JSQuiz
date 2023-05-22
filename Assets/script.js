@@ -59,24 +59,37 @@ function startQuiz() {
   timeLeft = 60; // Set the timer to 60 seconds
   timerElement.textContent = timeLeft;
 
-  // Start the timer
-  timerInterval = setInterval(updateTimer, 1000);
-
-  // Display the first question
-  displayQuestion();
-}
-
-// Function to update the timer
-function updateTimer() {
-  timeLeft--;
-  timerElement.textContent = timeLeft;
-
-  if (timeLeft <= 0) {
-    // Quiz is over when the timer reaches 0
-    clearInterval(timerInterval);
-    endQuiz();
+  function initializeTimer() {
+    timeLeft = 60; // Set the timer to 60 seconds
+    timerElement.textContent = timeLeft;
   }
 }
+  
+  function startQuiz() {
+    startPage.style.display = "none";
+    quizPage.style.display = "block";
+  
+    currentQuestionIndex = 0;
+  
+    // Initialize the timer
+    initializeTimer();
+  
+    // Start the timer
+    timerInterval = setInterval(updateTimer, 1000);
+  
+    // Display the first question
+    displayQuestion();
+  }
+  
+  function updateTimer() {
+    timeLeft--;
+    timerElement.textContent = timeLeft;
+  
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      endQuiz();
+    }
+  }
 
 // Function to display a question
 function displayQuestion() {
