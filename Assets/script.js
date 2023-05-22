@@ -1,43 +1,45 @@
 // Quiz questions and answers
 const questions = [
-    {
-      question: "Commonly used data types DO NOT include:",
-      choices: ["strings", "booleans", "alerts", "numbers"],
-      answer: "alerts",
-    },
-    
-    { question: "The condition in an if / else statement is enclosed within ________.",
-      choices: ["quotes", "curly braces", "parentheses", "square braces"],
-      answer: "curly braces",
-    },
-    
-    {
-      question: "Arrays in JavaScript can be used to store _______.",
-      choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-      answer: "all of the above",
-    },
-    {
-      question: "String values must be enclosed withtin ___________ when being assigned to variables.",
-      choices: ["commas", "curly braces", "quotes", "parentheses"],
-      answer: "quotes",
-    },
-    {
-      question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-      choices: ["JavaScript", "terminal/bash", "for loops", "console.log"],
-      answer: "console.log",
-    },
+  {
+    question: "Commonly used data types DO NOT include:",
+    choices: ["strings", "booleans", "alerts", "numbers"],
+    answer: "alerts",
+  },
+  {
+    question: "The condition in an if / else statement is enclosed within ________.",
+    choices: ["quotes", "curly braces", "parentheses", "square braces"],
+    answer: "parentheses",
+  },
+  {
+    question: "Arrays in JavaScript can be used to store _______.",
+    choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
+    answer: "all of the above",
+  },
+  {
+    question: "String values must be enclosed within ___________ when being assigned to variables.",
+    choices: ["commas", "curly braces", "quotes", "parentheses"],
+    answer: "quotes",
+  },
+  {
+    question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+    choices: ["JavaScript", "terminal/bash", "for loops", "console.log"],
+    answer: "console.log",
+  },
+];
 
-  ];
 
-  const quizContainer = document.getElementById("quiz");
+const startPage = document.getElementById("start-page");
+const quizPage = document.getElementById("quiz-page");
+const endQuizPage = document.getElementById("end-quiz-page");
+const highscorePage = document.getElementById("highscore-page");
 const startButton = document.getElementById("start");
 const timerElement = document.getElementById("time");
 const questionElement = document.getElementById("question");
 const choicesContainer = document.getElementById("choices");
 const feedbackElement = document.getElementById("feedback");
-const highscoreForm = document.getElementById("highscore-form");
+const finalScoreElement = document.getElementById("final-score");
 const initialsInput = document.getElementById("initials");
-const highscoreList = document.getElementById("highscore-list");
+const submitScoreButton = document.getElementById("submit-score");
 
 let currentQuestionIndex;
 let timeLeft;
@@ -46,19 +48,15 @@ let highscores = [];
 
 // Start the quiz when the start button is clicked
 startButton.addEventListener("click", startQuiz);
-
-// Submit high score when the form is submitted
-highscoreForm.addEventListener("submit", submitHighscore);
+submitScoreButton.addEventListener("click", submitHighscore);
 
 // Function to start the quiz
 function startQuiz() {
+  startPage.style.display = "none";
+  quizPage.style.display = "block";
+
   currentQuestionIndex = 0;
   timeLeft = 60; // Set the timer to 60 seconds
-
-  quizContainer.style.display = "none";
-  startButton.style.display = "none";
-  highscoreForm.style.display = "none";
-  highscoreList.style.display = "none";
   timerElement.textContent = timeLeft;
 
   // Start the timer
@@ -124,13 +122,11 @@ function handleChoiceClick(event) {
   }
 }
 
-// Function to end the quiz
+// Function to end the quiz and display the final score page
 function endQuiz() {
-  quizContainer.style.display = "block";
-  feedbackElement.textContent = "";
-  questionElement.textContent = "Quiz complete!";
-  choicesContainer.innerHTML = "";
-  highscoreForm.style.display = "block";
+  quizPage.style.display = "none";
+  endQuizPage.style.display = "block";
+  finalScoreElement.textContent = timeLeft;
 }
 
 // Function to submit the high score
@@ -141,7 +137,7 @@ function submitHighscore(event) {
   if (initials !== "") {
     const highscore = {
       initials: initials,
-      score: timeLeft
+      score: timeLeft,
     };
 
     highscores.push(highscore);
@@ -150,14 +146,16 @@ function submitHighscore(event) {
     // Clear the input field
     initialsInput.value = "";
 
-    // Display high scores
+    // Display the highscores page
+    endQuizPage.style.display = "none";
+    highscorePage.style.display = "block";
     displayHighscores();
   }
 }
 
 // Function to display high scores
 function displayHighscores() {
-  highscoreList.style.display = "block";
+  const highscoreList = document.getElementById("highscore-list");
   highscoreList.innerHTML = "";
 
   for (let i = 0; i < highscores.length; i++) {

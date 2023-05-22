@@ -33,7 +33,9 @@ h1 {
 }
 
 #timer {
-  text-align: right;
+  position: fixed;
+  top: 10px;
+  right: 10px;
   font-size: 18px;
 }
 
@@ -81,4 +83,10 @@ h1 {
 #highscore-list div {
   margin-bottom: 10px;
   font-size: 16px;
+}
+
+#view-highscores {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
