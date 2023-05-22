@@ -1,4 +1,3 @@
-// Quiz questions and answers
 const questions = [
   {
     question: "Commonly used data types DO NOT include:",
@@ -27,77 +26,69 @@ const questions = [
   },
 ];
 
-
 const startPage = document.getElementById("start-page");
 const quizPage = document.getElementById("quiz-page");
 const endQuizPage = document.getElementById("end-quiz-page");
 const highscorePage = document.getElementById("highscore-page");
 const startButton = document.getElementById("start");
-const timerElement = document.getElementById("time");
+const startTimerElement = document.getElementById("start-timer"); // Updated ID
+const quizTimerElement = document.getElementById("quiz-timer"); // Updated ID
 const questionElement = document.getElementById("question");
 const choicesContainer = document.getElementById("choices");
 const feedbackElement = document.getElementById("feedback");
 const finalScoreElement = document.getElementById("final-score");
 const initialsInput = document.getElementById("initials");
 const submitScoreButton = document.getElementById("submit-score");
+const goBackButton = document.getElementById("go-back");
+const clearScoresButton = document.getElementById("clear-scores");
 
 let currentQuestionIndex;
 let timeLeft;
 let timerInterval;
 let highscores = [];
 
-// Start the quiz when the start button is clicked
 startButton.addEventListener("click", startQuiz);
 submitScoreButton.addEventListener("click", submitHighscore);
+goBackButton.addEventListener("click", goBack);
+clearScoresButton.addEventListener("click", clearScores);
 
-// Function to start the quiz
 function startQuiz() {
   startPage.style.display = "none";
   quizPage.style.display = "block";
 
   currentQuestionIndex = 0;
-  timeLeft = 60; // Set the timer to 60 seconds
-  timerElement.textContent = timeLeft;
+  timeLeft = 60;
+  startTimerElement.textContent = "Time: " + timeLeft + " seconds"; // Updated variable name
 
-  function initializeTimer() {
-    timeLeft = 60; // Set the timer to 60 seconds
-    timerElement.textContent = timeLeft;
+  initializeTimer();
+  timerInterval = setInterval(updateTimer, 1000);
+  displayQuestion();
+}
+
+function initializeTimer() {
+  timeLeft = 60;
+  startTimerElement.textContent = "Time: " + timeLeft + " seconds"; // Updated variable name
+}
+
+function updateTimer() {
+  timeLeft--;
+  if (startPage.style.display === "block") {
+    startTimerElement.textContent = "Time: " + timeLeft + " seconds"; // Updated variable name
+  } else if (quizPage.style.display === "block") {
+    quizTimerElement.textContent = "Time: " + timeLeft + " seconds"; // Updated variable name
+  }
+
+  if (timeLeft <= 0) {
+    clearInterval(timerInterval);
+    endQuiz();
   }
 }
-  
-  function startQuiz() {
-    startPage.style.display = "none";
-    quizPage.style.display = "block";
-  
-    currentQuestionIndex = 0;
-  
-    // Initialize the timer
-    initializeTimer();
-  
-    // Start the timer
-    timerInterval = setInterval(updateTimer, 1000);
-  
-    // Display the first question
-    displayQuestion();
-  }
-  
-  function updateTimer() {
-    timeLeft--;
-    timerElement.textContent = timeLeft;
-  
-    if (timeLeft <= 0) {
-      clearInterval(timerInterval);
-      endQuiz();
-    }
-  }
 
-// Function to display a question
 function displayQuestion() {
   const question = questions[currentQuestionIndex];
   questionElement.textContent = question.question;
   choicesContainer.innerHTML = "";
 
-  // Create and display the answer choices
   for (let i = 0; i < question.choices.length; i++) {
     const choice = question.choices[i];
     const choiceButton = document.createElement("button");
@@ -107,18 +98,15 @@ function displayQuestion() {
   }
 }
 
-// Function to handle the user's choice
 function handleChoiceClick(event) {
   const selectedChoice = event.target;
   const question = questions[currentQuestionIndex];
 
   if (selectedChoice.textContent === question.answer) {
-    // The answer is correct
     feedbackElement.textContent = "Correct!";
   } else {
-    // The answer is wrong
     feedbackElement.textContent = "Wrong!";
-    timeLeft -= 10; // Penalty of 10 seconds for wrong answers
+    timeLeft -= 10;
     if (timeLeft < 0) {
       timeLeft = 0;
     }
@@ -127,7 +115,6 @@ function handleChoiceClick(event) {
   currentQuestionIndex++;
 
   if (currentQuestionIndex === questions.length) {
-    // All questions have been answered
     clearInterval(timerInterval);
     endQuiz();
   } else {
@@ -135,14 +122,12 @@ function handleChoiceClick(event) {
   }
 }
 
-// Function to end the quiz and display the final score page
 function endQuiz() {
   quizPage.style.display = "none";
   endQuizPage.style.display = "block";
   finalScoreElement.textContent = timeLeft;
 }
 
-// Function to submit the high score
 function submitHighscore(event) {
   event.preventDefault();
   const initials = initialsInput.value.trim();
@@ -154,19 +139,26 @@ function submitHighscore(event) {
     };
 
     highscores.push(highscore);
-    highscores.sort((a, b) => b.score - a.score); // Sort high scores in descending order
+    highscores.sort((a, b) => b.score - a.score);
 
-    // Clear the input field
     initialsInput.value = "";
 
-    // Display the highscores page
     endQuizPage.style.display = "none";
     highscorePage.style.display = "block";
     displayHighscores();
   }
 }
 
-// Function to display high scores
+function goBack() {
+  highscorePage.style.display = "none";
+  startPage.style.display = "block";
+}
+
+function clearScores() {
+  highscores = [];
+  displayHighscores();
+}
+
 function displayHighscores() {
   const highscoreList = document.getElementById("highscore-list");
   highscoreList.innerHTML = "";
