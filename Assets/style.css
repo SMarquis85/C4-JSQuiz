@@ -35,6 +35,11 @@ h1 {
   margin: 20px auto;
   padding: 10px 20px;
   font-size: 18px;
+  background-color: blue; /* Replace with desired color */
+  color: white; /* Replace with desired color */
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 
@@ -75,6 +80,18 @@ h1 {
   font-size: 16px;
   background-color: blue;
   color: white;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#submit-score {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: blue; /* Replace with desired color */
+  color: white; /* Replace with desired color */
   border: 1px solid #cccccc;
   border-radius: 5px;
   cursor: pointer;
