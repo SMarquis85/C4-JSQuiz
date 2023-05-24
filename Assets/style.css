@@ -85,6 +85,18 @@ h1 {
   cursor: pointer;
 }
 
+.button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: blue;
+  color: white;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 #submit-score {
   display: block;
   margin: 20px auto;

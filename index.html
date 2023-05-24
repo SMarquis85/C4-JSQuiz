@@ -6,17 +6,17 @@
 </head>
 
 <body>
-  <div id="start-page">
+  <div id="start-page" class="container">
     <h1>JavaScript Quiz</h1>
     <p id="instructions">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score time by ten seconds.</p>
-    <button id="start">Start Quiz</button>
+    <button id="start" class="button">Start Quiz</button>
     <div id="start-timer">
       <span>Time:</span>
       <span id="start-time">0</span> seconds
     </div>
   </div>
 
-  <div id="quiz-page" style="display: none;">
+  <div id="quiz-page" class="container" style="display: none;">
     <div id="quiz-timer">
       <span>Time:</span>
       <span id="quiz-time">0</span> seconds
@@ -31,14 +31,14 @@
     <p>Your final score is <span id="final-score"></span>.</p>
     <p>Enter your initials:</p>
     <input type="text" id="initials" required>
-    <button id="submit-score">Submit</button>
+    <button id="submit-score" class="button">Submit</button>
   </div>
 
-  <div id="highscore-page" style="display: none;">
-    <h2>Highscores</h2>
-    <div id="highscore-list" class="highscore-list"></div>
-    <button id="go-back">Go Back</button>
-    <button id="clear-scores">Clear Highscores</button>
+  <div id="highscore-page" class="container" style="display: none;">
+    <h1>Highscores</h1>
+    <div id="highscore-list" class="quiz-question"></div>
+    <button id="go-back" class="button">Go Back</button>
+    <button id="clear-scores" class="button">Clear Highscores</button>
   </div>
 
   <script src="Assets/script.js"></script>
