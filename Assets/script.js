@@ -41,16 +41,24 @@ const initialsInput = document.getElementById("initials");
 const submitScoreButton = document.getElementById("submit-score");
 const goBackButton = document.getElementById("go-back");
 const clearScoresButton = document.getElementById("clear-scores");
+const viewHighscoresButton = document.getElementById("view-highscores"); // View Highscore button
 
 let currentQuestionIndex;
 let timeLeft;
 let timerInterval;
 let highscores = [];
 
+viewHighscoresButton.addEventListener("click", showHighscorePage);
 startButton.addEventListener("click", startQuiz);
 submitScoreButton.addEventListener("click", submitHighscore);
 goBackButton.addEventListener("click", goBack);
 clearScoresButton.addEventListener("click", clearScores);
+
+function showHighscorePage() {
+  startPage.style.display = "none";
+  highscorePage.style.display = "block";
+  displayHighscores();
+}
 
 function startQuiz() {
   startPage.style.display = "none";
