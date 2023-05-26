@@ -49,7 +49,7 @@ The following images show the quiz's appearance and functionality. (See below)
 
 ### How the Quiz looks: During with a "Wrong!" answer: 
 
-![Assets/images/Wron.png](Assets/images/Wrong.png)
+![Assets/images/Wrong.png](Assets/images/Wrong.png)
 
 ### How the Quiz looks: At the End, asking for initials:
 
