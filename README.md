@@ -55,4 +55,4 @@ The following images show the quiz's appearance and functionality. (See below)
 
 ![Assets/images/Highscore.png](Assets/images/Highscore.png)
 
-The assignment can be viewed here: [C4-JSQuiz](file:///C:/Users/S.NA.THALIE_888/bootcamp/C4-JSQuiz/index.html)
+The assignment can be viewed here: [C4-JSQuiz](https://smarquis85.github.io/C4-JSQuiz/)
