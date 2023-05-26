@@ -51,8 +51,11 @@ The following images show the quiz's appearance and functionality. (See below)
 
 ![Assets/images/Wrong.png](Assets/images/Wrong.png)
 
-### How the Quiz looks: At the End, asking for initials:
+### How the Quiz looks: At the End, showing the "All done!" and asking for initials:
+
+![Assets\images\AllDone.png](Assets/images/AllDone.png)
+
+### How the Quiz looks: At the End, showing the "Highscores":
 
 ![Assets/images/Highscore.png](Assets/images/Highscore.png)
 
-The assignment can be viewed here: [C4-JSQuiz](https://smarquis85.github.io/C4-JSQuiz/)
