@@ -1,7 +1,7 @@
 # C4-JSQuiz
 ## Main Task
 
-To modify starter code to create an application that enables employees to generate random passwords based on criteria that they’ve selected.
+this Challenge invites you to build a timed coding quiz with multiple-choice questions.
 
 ## Requirements:
 
