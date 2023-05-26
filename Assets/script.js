@@ -1,8 +1,8 @@
 const questions = [
   {
-    question: "Commonly used data types DO NOT include:",
-    choices: ["strings", "booleans", "alerts", "numbers"],
-    answer: "alerts",
+    question: "Commonly used data types DO NOT include:", // Question
+    choices: ["strings", "booleans", "alerts", "numbers"], // Possible choices
+    answer: "alerts", // Correct answer
   },
   {
     question: "The condition in an if / else statement is enclosed within ________.",
@@ -26,6 +26,7 @@ const questions = [
   },
 ];
 
+// DOM elements
 const startPage = document.getElementById("start-page");
 const quizPage = document.getElementById("quiz-page");
 const endQuizPage = document.getElementById("end-quiz-page");
@@ -43,23 +44,27 @@ const goBackButton = document.getElementById("go-back");
 const clearScoresButton = document.getElementById("clear-scores");
 const viewHighscoresButton = document.getElementById("view-highscores"); // View Highscore button
 
-let currentQuestionIndex;
-let timeLeft;
-let timerInterval;
-let highscores = [];
+// Variables
+let currentQuestionIndex; // Current question index
+let timeLeft; // Time left for the quiz
+let timerInterval; // Timer interval
+let highscores = []; // Array to store highscores
 
+// Event listeners
 viewHighscoresButton.addEventListener("click", showHighscorePage);
 startButton.addEventListener("click", startQuiz);
 submitScoreButton.addEventListener("click", submitHighscore);
 goBackButton.addEventListener("click", goBack);
 clearScoresButton.addEventListener("click", clearScores);
 
+// Function to show the highscore page
 function showHighscorePage() {
   startPage.style.display = "none";
   highscorePage.style.display = "block";
   displayHighscores();
 }
 
+// Function to start the quiz
 function startQuiz() {
   startPage.style.display = "none";
   quizPage.style.display = "block";
@@ -73,11 +78,13 @@ function startQuiz() {
   displayQuestion();
 }
 
+// Function to initialize the timer
 function initializeTimer() {
   timeLeft = 60;
   startTimerElement.textContent = "Time: " + timeLeft + " seconds"; // Updated variable name
 }
 
+// Function to update the timer
 function updateTimer() {
   timeLeft--;
   if (startPage.style.display === "block") {
@@ -92,6 +99,7 @@ function updateTimer() {
   }
 }
 
+// Function to display a question
 function displayQuestion() {
   const question = questions[currentQuestionIndex];
   questionElement.textContent = question.question;
@@ -106,6 +114,7 @@ function displayQuestion() {
   }
 }
 
+// Function to handle the choice click event
 function handleChoiceClick(event) {
   const selectedChoice = event.target;
   const question = questions[currentQuestionIndex];
@@ -130,12 +139,14 @@ function handleChoiceClick(event) {
   }
 }
 
+// Function to end the quiz
 function endQuiz() {
   quizPage.style.display = "none";
   endQuizPage.style.display = "block";
   finalScoreElement.textContent = timeLeft;
 }
 
+// Function to submit highscore
 function submitHighscore(event) {
   event.preventDefault();
   const initials = initialsInput.value.trim();
@@ -157,16 +168,19 @@ function submitHighscore(event) {
   }
 }
 
+// Function to go back to the start page
 function goBack() {
   highscorePage.style.display = "none";
   startPage.style.display = "block";
 }
 
+// Function to clear the highscores
 function clearScores() {
   highscores = [];
   displayHighscores();
 }
 
+// Function to display the highscores
 function displayHighscores() {
   const highscoreList = document.getElementById("highscore-list");
   highscoreList.innerHTML = "";
