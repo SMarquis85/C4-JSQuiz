@@ -41,18 +41,18 @@ The following images show the quiz's appearance and functionality. (See below)
 
 ### How the Quiz looks:
 
-![Assets\images\START QUIZ .png](image.png)
+![Assets/images/START QUIZ .png](image.png)
 
 ### How the Quiz looks: During with a "Correct!" answer:
 
-![Assets\images\DURING - Correct!.png]()
+![Assets/images/DURING - Correct!.png]()
 
 ### How the Quiz looks: During with a "Wrong!" answer: 
 
-![Assets\images\DURING - Wrong!.png]()
+![Assets/images/DURING - Wrong!.png]()
 
 ### How the Quiz looks: At the End, asking for initials:
 
-![Assets\images\END - Highscore.png](image.png)
+![Assets/images/END - Highscore.png](image.png)
 
 The assignment can be viewed here: [C4-JSQuiz]()
