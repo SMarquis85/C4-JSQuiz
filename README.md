@@ -41,7 +41,7 @@ The following images show the quiz's appearance and functionality. (See below)
 
 ### How the Quiz looks:
 
-![Assets/images/START QUIZ .png](image.png)
+![Assets/images/START QUIZ .png](Assets/images/START QUIZ .png)
 
 ### How the Quiz looks: During with a "Correct!" answer:
 
