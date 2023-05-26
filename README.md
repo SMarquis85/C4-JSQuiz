@@ -1,7 +1,7 @@
 # C4-JSQuiz
 ## Main Task
 
-this Challenge invites you to build a timed coding quiz with multiple-choice questions.
+This Challenge invites you to build a timed coding quiz with multiple-choice questions.
 
 ## Requirements:
 
