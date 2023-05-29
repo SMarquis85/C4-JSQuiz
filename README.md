@@ -59,3 +59,4 @@ The following images show the quiz's appearance and functionality. (See below)
 
 ![Assets/images/Highscore.png](Assets/images/Highscore.png)
 
+The assignment can be viewed here: [C4-JSQuiz]( https://smarquis85.github.io/C4-JSQuiz/)
