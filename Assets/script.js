@@ -6,7 +6,7 @@ const questions = [
   },
   {
     question: "The condition in an if / else statement is enclosed within ________.",
-    choices: ["quotes", "curly braces", "parentheses", "square braces"],
+    choices: ["quotes", "curly brackets", "parentheses", "square braces"],
     answer: "parentheses",
   },
   {
@@ -16,7 +16,7 @@ const questions = [
   },
   {
     question: "String values must be enclosed within ___________ when being assigned to variables.",
-    choices: ["commas", "curly braces", "quotes", "parentheses"],
+    choices: ["commas", "curly brackets", "quotes", "parentheses"],
     answer: "quotes",
   },
   {
